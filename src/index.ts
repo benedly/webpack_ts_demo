@@ -2,7 +2,7 @@
 import * as _ from 'lodash';
 
 // style
-import "./styles/style.scss";
+import "./assets/scss/style.scss";
 
 function component() {
     const element = document.createElement('div');
