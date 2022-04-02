@@ -1,0 +1,52 @@
+// Layout //
+$body-bg: #fff !default;
+$padding: 4px;
+$header-height: 64px;
+$lnb-item-height: 34px;
+
+// font size
+$fz-x-small: 0.625rem;
+$fz-small: 0.6875rem;
+$fz-default: 0.75rem;
+$fz-large: 0.875rem;
+$fz-x-large: 1rem;
+$fz-xx-large: 1.25rem;
+
+// font base
+$fz-title: $fz-default;
+$fz-popup-title: $fz-x-large;
+
+// h1 //
+$h1-font-size: 3rem !default; // 28px
+$h2-font-size: 2rem !default; // 24px
+$h3-font-size: 1.64rem !default; // 22px
+$h4-font-size: 1.5rem !default; // 20px
+$h5-font-size: 1.285rem !default; // 16px
+$h6-font-size: 1.142rem !default; // 14px
+
+// Color Theme
+$primary: #ff7800;
+$secondary: #4a4a4a;
+$accent: #82b1ff;
+$error: #ff5252;
+$info: #2196f3;
+$success: #4caf50;
+$warning: #fb8c00;
+
+// UI Colors
+$uiColor: #d66d07;
+$uiBaseColor: #727a8e;
+
+// border color
+$border-color: #dcdcdc;
+$border-grey: #b5b5b5;
+
+// text color
+$text-color: #555555;
+$text-light: #b9b9b9;
+$text-lightgray: #9a9a9a;
+$text-grey: #404040;
+$text-dark: #2a2a2a;
+$icon-color: #9a9a9a;
+$title-color: #000000;
+$card-title-color: $text-dark;

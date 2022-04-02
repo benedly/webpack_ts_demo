@@ -1,0 +1,23 @@
+.neo-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .v-tabs-bar {
+    height: 31px;
+    .v-tab {
+      font-size: $fz-default;
+      border-width: 1px 1px 0;
+      border-style: solid;
+      border-color: $border-grey;
+      background-color: #f3f3f3;
+      border-radius: 4px 4px 0 0;
+    }
+    .v-tab--active {
+      background-color: #fff;
+    }
+    .v-tab ~ .v-tab {
+      margin-left: -1px;
+    }
+  }
+}
