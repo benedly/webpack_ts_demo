@@ -1,3 +1,7 @@
-@use 'sass:map';
-@import 'variables';
-@import 'tab';
+@use "sass:map";
+@import "variables";
+@import "tab";
+
+div {
+  background-image: url("../pexels-photo-1529662.jpeg");
+}

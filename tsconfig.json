@@ -1,13 +1,17 @@
 {
-    "compilerOptions": {
-      "outDir": "./dist/",
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "jsx": "react",
-      "allowJs": true,
-      "moduleResolution": "node",
-      "allowSyntheticDefaultImports":true,
-      "esModuleInterop":true
+  "compilerOptions": {
+    "lib": ["es5", "es6", "esnext", "dom"],
+    "target": "es6", // 어떤 버전으로 컴파일할지 작성
+    "module": "commonjs", //어떤 모듈 방식으로 컴파일할지 설정
+    "strict": true, //strict 옵션 활성화
+    "moduleResolution": "node", //모듈 해석 방법 설정: 'node' (Node.js)
+    "esModuleInterop": true,
+    "jsx": "react",
+    "removeComments": true /* 주석 삭제 여부 */,
+
+    "baseUrl": "./", /* non-absolute한 모듈 이름을 처리할 기준 디렉토리 */
+    "paths": {
+      "@/*": ["src/*"]
     }
   }
+}

@@ -1,45 +1,45 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ["./src/index.ts", "./src/assets/scss/style.scss"],
+  entry: path.join(__dirname, "/src"),
+  mode: process.env.NODE_ENV,
+  devtool: "source-map",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js", // webpack default main.js
+    path: path.join(__dirname, "/dist"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
+      // 이미지 포멧: PNG, JP(E)G, GIF, SVG, WEBP
       {
-        test: /\.js$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: [
-                [
-                  "@babel/preset-env",
-                  {
-                    useBuiltIns: "usage",
-                    corejs: "3.6.4",
-                    targets: {
-                      chrome: "87",
-                    },
-                  },
-                ],
-              ],
-            },
-          },
-        ],
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        loader: "file-loader",
+        options: {
+          name: "assets/[contenthash].[ext]",
+        },
         exclude: /node_modules/,
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.tsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
+      // css & s[ac]ss & PostCSS
+      {
+        test: /\.(sa|sc|c)ss$/i,
         use: [
-          // bundle CSS
+          // bundle CSS File or Creates `style` nodes from JS strings
           MiniCssExtractPlugin.loader,
-          // Creates `style` nodes from JS strings
-          // "style-loader",npm list]
+          // "style-loader",
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
@@ -47,18 +47,19 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
-      // TypeScript 로더 설정
-      {
-        test: /\.tsx?$/i,
-        use: ["ts-loader"],
-      },
     ],
   },
   plugins: [
-    // 컴파일 + 번들링 CSS 파일이 저장될 경로와 이름 지정
-    new MiniCssExtractPlugin({ filename: "bundle.css" }),
-    new HtmlWebpackPlugin()
+    // 컴파일 + 번들링 CSS 파일이 저장될 경로(output.path)와 이름 지정
+    new MiniCssExtractPlugin({
+      filename: "bundle.css",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Output Management",
+      fileName: path.join(__dirname, "/dist"),
+    }),
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['dist']
+    }),
   ],
-  devtool: "source-map",
-  mode: "development",
 };
