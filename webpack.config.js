@@ -18,18 +18,18 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
       // 이미지 포멧: PNG, JP(E)G, GIF, SVG, WEBP
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/i,
         loader: "file-loader",
         options: {
-          name: "assets/[contenthash].[ext]",
+          name: "assets/[name].[ext]", // name or contenthash
         },
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.tsx?$/,
-        loader: "babel-loader",
         exclude: /node_modules/,
       },
       // css & s[ac]ss & PostCSS
@@ -37,8 +37,8 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/i,
         use: [
           // bundle CSS File or Creates `style` nodes from JS strings
-          MiniCssExtractPlugin.loader,
-          // "style-loader",
+          // MiniCssExtractPlugin.loader,
+          "style-loader",
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
