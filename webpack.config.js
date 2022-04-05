@@ -1,7 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, "/src"),
@@ -57,9 +56,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Output Management",
       fileName: path.join(__dirname, "/dist"),
-    }),
-    new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ['dist']
     }),
   ],
 };
