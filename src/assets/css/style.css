@@ -5,3 +5,7 @@ div {
 a {
   display: flex;
 }
+
+div {
+  background-image: url("/src/assets/pexels-photo-1529662.jpeg");
+}

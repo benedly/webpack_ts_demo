@@ -54,7 +54,7 @@ module.exports = {
       filename: "bundle.css",
     }),
     new HtmlWebpackPlugin({
-      title: "Output Management",
+      title: "Dist",
       fileName: path.join(__dirname, "/dist"),
     }),
   ],
