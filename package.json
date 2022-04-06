@@ -1,14 +1,22 @@
 {
   "name": "webpack_ts_demo",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "last 2 versions",
+      "not dead",
+      "not ie <= 10"
+    ]
+  },
   "description": "",
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -17,12 +25,14 @@
     "@babel/preset-typescript": "^7.16.7",
     "@types/lodash": "^4.14.181",
     "babel-loader": "^8.2.4",
+    "browserslist": "^4.20.2",
+    "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.21.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "sass": "^1.49.11",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "typescript": "^4.6.3",

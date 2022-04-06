@@ -1,8 +1,7 @@
 // add lodash
 import * as _ from "lodash";
 
-import "@/assets/css/style.css"
-import "@/assets/scss/style.scss"
+import "@/scss/style.scss";
 
 function component() {
   const element = document.createElement("div");
@@ -22,6 +21,6 @@ const getMsg = (msg: string) => {
 document.body.appendChild(component());
 document.body.appendChild(getMsg("babel"));
 
-let testTx:string = "replace test test";
-testTx = testTx.replaceAll('test', 'replaceAll')
+let testTx: string = "replace test test";
+testTx = testTx.replaceAll("test", "replaceAll");
 console.log(testTx);

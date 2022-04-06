@@ -1,0 +1,11 @@
+@use "sass:map";
+@import "variables";
+@import "tab";
+
+body {
+  background: url("@/assets/pexels-photo-1529662.jpeg");
+}
+div {
+  background: url("../assets/logo.png");
+  background-repeat: no-repeat;
+}
