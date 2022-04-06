@@ -82,7 +82,11 @@ module.exports = {
     // 빌드 된 결과물 정리
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+<<<<<<< HEAD
       title: "dist index",
+=======
+      title: "Dist",
+>>>>>>> 653709f056e535562d07f653af16a7b67206e830
       fileName: path.join(__dirname, "/dist"),
     }),
   ],
